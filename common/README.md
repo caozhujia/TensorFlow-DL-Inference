@@ -98,3 +98,26 @@ delete gpu_time
 支持解析ONNX模型和Caffe模型，可继承修改继续封装或直接实例化使用；
 
 支持INT8量化。
+
+直接实例化`TrtBase`：
+
+```C++
+const std::string onnx_model = "mnist_onnx/model/mnist.onnx";
+const std::string engine_file = "";
+const std::vector<std::string> output_name{"Plus214_Output_0"};
+int batch_size = 1;
+infer_precision_t precision = INFER_FP32;
+TrtBase trt_base = new TrtBase();
+trt_base->create_engine(onnx_model, engine_file, output_name, batch_size, precision);
+int input_data_size = 300;
+std::vector<float> input_data(input_data_size, 0.5);
+std::vector<int> input_dims{1,10,30};
+trt_base->set_binding_dimentsions(input_dims, 0);
+trt_base->mem_host_to_device(input_data, 0);
+trt_base->inference();
+std::vector<float> output_data;
+trt_base->mem_device_to_host(output_data, 1);
+// process output data
+```
+
+继承`TrtBase`，进一步封装，见 `mnist_onnx` sample。
