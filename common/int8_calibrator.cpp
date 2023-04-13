@@ -10,3 +10,8 @@
 #include <algorithm>
 #include <fstream>
 #include <memory>
+#include <string.h>
+
+#include "int8_calibrator.h"
+
+nvinfer1::IInt8Calibrator* helper::get_int8_calib
