@@ -14,4 +14,7 @@
 
 #include "int8_calibrator.h"
 
-nvinfer1::IInt8Calibrator* helper::get_int8_calib
+nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
+                const std::string& calibrator_type,
+                int batch_size, 
+                con
