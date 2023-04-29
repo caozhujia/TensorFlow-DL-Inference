@@ -17,4 +17,6 @@
 nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
                 const std::string& calibrator_type,
                 int batch_size, 
-                con
+                const std::vector<std::vector<float>>& data,
+                const std::string& calib_data_name, 
+     
