@@ -23,4 +23,8 @@ nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
 {
     if(calibrator_type == "Int8EntropyCalibrator2")
     {
-        r
+        return new Int8EntropyCalibrator2(batch_size, data, calib_data_name, read_cache);
+    }
+    else
+    {
+        help
