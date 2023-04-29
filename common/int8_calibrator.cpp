@@ -19,4 +19,8 @@ nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
                 int batch_size, 
                 const std::vector<std::vector<float>>& data,
                 const std::string& calib_data_name, 
-     
+                bool read_cache)
+{
+    if(calibrator_type == "Int8EntropyCalibrator2")
+    {
+        r
