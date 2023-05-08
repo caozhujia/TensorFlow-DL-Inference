@@ -27,4 +27,7 @@ nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
     }
     else
     {
-        help
+        helper::debug << "[INT8] : Unsupport calibrator type "<< std::endl;
+        return nullptr;
+    }
+   
