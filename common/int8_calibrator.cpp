@@ -30,4 +30,9 @@ nvinfer1::IInt8Calibrator* helper::get_int8_calibrator(
         helper::debug << "[INT8] : Unsupport calibrator type "<< std::endl;
         return nullptr;
     }
-   
+    
+}
+
+
+Int8EntropyCalibrator2::Int8EntropyCalibrator2(int batch_size, 
+            const std::vector<std::vector<float
