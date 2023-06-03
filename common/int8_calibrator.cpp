@@ -38,4 +38,8 @@ Int8EntropyCalibrator2::Int8EntropyCalibrator2(int batch_size,
             const std::vector<std::vector<float>>& data,
             const std::string& calib_data_name , 
             bool read_cache)
-            : m_calib_data_name(calib_da
+            : m_calib_data_name(calib_data_name), 
+            m_batch_size(batch_size),
+            m_read_cache(read_cache)
+{
+    m_data.reser
