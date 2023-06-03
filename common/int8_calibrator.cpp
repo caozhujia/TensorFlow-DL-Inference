@@ -42,4 +42,8 @@ Int8EntropyCalibrator2::Int8EntropyCalibrator2(int batch_size,
             m_batch_size(batch_size),
             m_read_cache(read_cache)
 {
-    m_data.reser
+    m_data.reserve(data.size());
+    m_data = data;
+
+    m_input_count = batch_size * data[0].size();
+    m_curre
