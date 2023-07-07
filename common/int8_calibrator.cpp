@@ -48,4 +48,9 @@ Int8EntropyCalibrator2::Int8EntropyCalibrator2(int batch_size,
     m_input_count = batch_size * data[0].size();
     m_current_batch_data = new float(m_input_count);
     m_current_batch_idx = 0;
-    m_device_input = helper::safe_cuda_
+    m_device_input = helper::safe_cuda_malloc(m_input_count * sizeof(float));
+}
+
+Int8EntropyCalibrator2::~Int8EntropyCalibrator2()
+{
+    helpe
