@@ -53,4 +53,6 @@ Int8EntropyCalibrator2::Int8EntropyCalibrator2(int batch_size,
 
 Int8EntropyCalibrator2::~Int8EntropyCalibrator2()
 {
-    helpe
+    helper::safe_cuda_free(m_device_input);
+    if(m_current_batch_data)
+        delete[] m_current_bat
