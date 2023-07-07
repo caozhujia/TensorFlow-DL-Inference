@@ -60,4 +60,8 @@ Int8EntropyCalibrator2::~Int8EntropyCalibrator2()
 
 int Int8EntropyCalibrator2::getBatchSize() const
 {
-    helper::debug << "[INT8] : get batch size
+    helper::debug << "[INT8] : get batch size : " << m_batch_size << std::endl;
+    return m_batch_size;
+}
+
+bool Int8EntropyCalibrator2::getBatch(void* bindings
