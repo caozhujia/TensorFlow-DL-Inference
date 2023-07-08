@@ -66,4 +66,6 @@ int Int8EntropyCalibrator2::getBatchSize() const
 
 bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int nb_bindings)
 {
-    helper::debug << "[INT8] : name: " << names[0]
+    helper::debug << "[INT8] : name: " << names[0] << ", nbBindings: " << nb_bindings << std::endl;
+
+    if(m_current_batch_idx + m_batch_size > int
