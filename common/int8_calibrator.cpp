@@ -82,4 +82,7 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
         assert(img_size == val.size());
         memcpy(ptr, val.data(), img_size*sizeof(float));
 
-        p
+        ptr += img_size;
+    });
+
+    CUDA_CHECK(cudaMemcpy(m_device_input, m_current_batch_da
