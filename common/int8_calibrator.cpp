@@ -68,4 +68,9 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 {
     helper::debug << "[INT8] : name: " << names[0] << ", nbBindings: " << nb_bindings << std::endl;
 
-    if(m_current_batch_idx + m_batch_size > int
+    if(m_current_batch_idx + m_batch_size > int(m_data.size()))
+    {
+        return false;
+    }
+
+    float* ptr = m_current_batch_d
