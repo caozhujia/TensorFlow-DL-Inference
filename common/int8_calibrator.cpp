@@ -73,4 +73,6 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
         return false;
     }
 
-    float* ptr = m_current_batch_d
+    float* ptr = m_current_batch_data;
+    size_t img_size = m_input_count / m_batch_size;
+    auto iter = m_data.begin() + m_current_batch_i
