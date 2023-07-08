@@ -79,4 +79,7 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 
     std::for_each(iter, iter + m_batch_size, [=, &ptr](std::vector<float>& val)
     {
-     
+        assert(img_size == val.size());
+        memcpy(ptr, val.data(), img_size*sizeof(float));
+
+        p
