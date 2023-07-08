@@ -75,4 +75,8 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 
     float* ptr = m_current_batch_data;
     size_t img_size = m_input_count / m_batch_size;
-    auto iter = m_data.begin() + m_current_batch_i
+    auto iter = m_data.begin() + m_current_batch_idx;
+
+    std::for_each(iter, iter + m_batch_size, [=, &ptr](std::vector<float>& val)
+    {
+     
