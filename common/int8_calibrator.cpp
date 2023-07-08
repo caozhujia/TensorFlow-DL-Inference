@@ -88,4 +88,6 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
     CUDA_CHECK(cudaMemcpy(m_device_input, m_current_batch_data, 
             m_input_count*sizeof(float), cudaMemcpyHostToDevice));
     
-    bindings[0] = m_de
+    bindings[0] = m_device_input;
+    helper::debug << "[INT8] : load batch " << m_current_batch_idx << " to "
+         
