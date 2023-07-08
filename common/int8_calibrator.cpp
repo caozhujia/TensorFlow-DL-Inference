@@ -64,4 +64,6 @@ int Int8EntropyCalibrator2::getBatchSize() const
     return m_batch_size;
 }
 
-bool Int8EntropyCalibrator2::getBatch(void* bindings
+bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int nb_bindings)
+{
+    helper::debug << "[INT8] : name: " << names[0]
