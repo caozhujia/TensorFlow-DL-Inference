@@ -111,4 +111,6 @@ const void* Int8EntropyCalibrator2::readCalibrationCache(std::size_t& length)
     }
 }
 
-void 
+void Int8EntropyCalibrator2::writeCalibrationCache(const void* cache, std::size_t length)
+{
+    std::o
