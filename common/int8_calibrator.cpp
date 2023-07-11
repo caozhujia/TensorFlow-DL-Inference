@@ -91,4 +91,11 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
     bindings[0] = m_device_input;
     helper::debug << "[INT8] : load batch " << m_current_batch_idx << " to "
                   << m_current_batch_idx + m_batch_size - 1 << std::endl;
-    m_current_batch_idx += m_batch_size
+    m_current_batch_idx += m_batch_size;
+
+    return true;
+}
+
+const void* Int8EntropyCalibrator2::readCalibrationCache(std::size_t& length)
+{
+    m
