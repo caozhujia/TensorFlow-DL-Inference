@@ -98,4 +98,5 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 
 const void* Int8EntropyCalibrator2::readCalibrationCache(std::size_t& length)
 {
-    m
+    m_calibration_cache.clear();
+    std::ifstream input(m_calib_data_name + ".calib", std::ios::binary);
