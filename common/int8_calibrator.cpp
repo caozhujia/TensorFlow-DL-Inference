@@ -106,4 +106,9 @@ const void* Int8EntropyCalibrator2::readCalibrationCache(std::size_t& length)
         std::copy(std::istream_iterator<char>(input), 
             std::istream_iterator<char>(), std::back_inserter(m_calibration_cache));
         
-        
+        length = m_calibration_cache.size();
+        return length ? &m_calibration_cache[0] : nullptr;
+    }
+}
+
+void 
