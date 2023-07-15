@@ -114,4 +114,5 @@ const void* Int8EntropyCalibrator2::readCalibrationCache(std::size_t& length)
 void Int8EntropyCalibrator2::writeCalibrationCache(const void* cache, std::size_t length)
 {
     std::ofstream output(m_calib_data_name + ".calib", std::ios::binary);
-    output.write(reinterpret_cast<const char*>(cache
+    output.write(reinterpret_cast<const char*>(cache), length);
+}
