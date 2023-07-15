@@ -24,3 +24,8 @@ nvinfer1::IInt8Calibrator* get_int8_calibrator(const std::string& calibrator_typ
                 int batch_size, const std::vector<std::vector<float>>& data,
                 const std::string& calib_data_name, bool read_cache);
 }// helper
+
+/**
+ * TensorRT INT8量化类
+ */
+class Int8EntropyCalibrator2 : public nvinfer1::IInt8EntropyCalibrator2
