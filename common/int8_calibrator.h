@@ -34,4 +34,8 @@ public:
     Int8EntropyCalibrator2(int batch_size, const std::vector<std::vector<float>>& data,
             const std::string& calib_data_name = "", bool read_cache = true);
         
-    ~Int8Entropy
+    ~Int8EntropyCalibrator2();
+
+    int getBatchSize() const override;
+
+    bool getBatch(void* bindings[], const char* names[], int 
