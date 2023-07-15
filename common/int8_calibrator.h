@@ -20,4 +20,5 @@
 
 namespace helper
 {
-nvinfer1::IInt8Calibrator* get_int8_ca
+nvinfer1::IInt8Calibrator* get_int8_calibrator(const std::string& calibrator_type,
+                int batch_size, const std::vector<std::vector<float
