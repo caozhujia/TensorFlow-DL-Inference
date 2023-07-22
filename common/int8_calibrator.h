@@ -49,4 +49,9 @@ private:
     std::vector<std::vector<float>> m_data;
     int m_batch_size;
 
-    int m_current_batc
+    int m_current_batch_idx;
+    float* m_current_batch_data{nullptr};
+
+    size_t m_input_count;
+    bool m_read_cache;
+    vo
