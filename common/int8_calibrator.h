@@ -54,4 +54,9 @@ private:
 
     size_t m_input_count;
     bool m_read_cache;
-    vo
+    void* m_device_input{nullptr};
+
+    std::vector<char> m_calibration_cache;
+};
+
+#endif // TRT_INT8_CALIBRATOR_H
