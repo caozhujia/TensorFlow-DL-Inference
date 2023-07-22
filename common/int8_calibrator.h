@@ -38,4 +38,8 @@ public:
 
     int getBatchSize() const override;
 
-    bool getBatch(void* bindings[], const char* names[], int 
+    bool getBatch(void* bindings[], const char* names[], int nbBindings) override;
+
+    const void* readCalibrationCache(std::size_t& length) override;
+
+    void w
