@@ -1,0 +1,43 @@
+
+name: "VGG_ILSVRC_16_layers"
+
+input: "data"
+input_shape {
+  dim: 2
+  dim: 3
+  dim: 375
+  dim: 500
+}
+
+input: "im_info"
+input_shape {
+  dim: 2
+  dim: 1
+  dim: 1
+  dim: 3
+}
+
+layer {
+  name: "conv1_1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1_1"
+  convolution_param {
+    num_output: 64
+    pad: 1 kernel_size: 3
+  }
+}
+layer {
+  name: "relu1_1"
+  type: "ReLU"
+  bottom: "conv1_1"
+  top: "conv1_1"
+}
+layer {
+  name: "conv1_2"
+  type: "Convolution"
+  bottom: "conv1_1"
+  top: "conv1_2"
+  convolution_param {
+    num_output: 64
+    pad: 1 kernel_size: 3
