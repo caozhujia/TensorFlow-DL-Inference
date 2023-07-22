@@ -42,4 +42,7 @@ public:
 
     const void* readCalibrationCache(std::size_t& length) override;
 
-    void w
+    void writeCalibrationCache(const void* ptr, std::size_t length) override;
+
+private:
+    std::string
