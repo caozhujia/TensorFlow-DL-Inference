@@ -45,4 +45,8 @@ public:
     void writeCalibrationCache(const void* ptr, std::size_t length) override;
 
 private:
-    std::string
+    std::string m_calib_data_name;
+    std::vector<std::vector<float>> m_data;
+    int m_batch_size;
+
+    int m_current_batc
