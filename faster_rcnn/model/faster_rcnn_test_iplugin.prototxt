@@ -234,3 +234,85 @@ layer {
   top: "conv5_1"
 }
 layer {
+  name: "conv5_2"
+  type: "Convolution"
+  bottom: "conv5_1"
+  top: "conv5_2"
+  convolution_param {
+    num_output: 512
+    pad: 1 kernel_size: 3
+  }
+}
+layer {
+  name: "relu5_2"
+  type: "ReLU"
+  bottom: "conv5_2"
+  top: "conv5_2"
+}
+layer {
+  name: "conv5_3"
+  type: "Convolution"
+  bottom: "conv5_2"
+  top: "conv5_3"
+  convolution_param {
+    num_output: 512
+    pad: 1 kernel_size: 3
+  }
+}
+layer {
+  name: "relu5_3"
+  type: "ReLU"
+  bottom: "conv5_3"
+  top: "conv5_3"
+}
+
+#========= RPN ============
+
+layer {
+  name: "rpn_conv/3x3"
+  type: "Convolution"
+  bottom: "conv5_3"
+  top: "rpn/output"
+  convolution_param {
+    num_output: 512
+    kernel_size: 3 pad: 1 stride: 1
+  }
+}
+layer {
+  name: "rpn_relu/3x3"
+  type: "ReLU"
+  bottom: "rpn/output"
+  top: "rpn/output"
+}
+
+layer {
+  name: "rpn_cls_score"
+  type: "Convolution"
+  bottom: "rpn/output"
+  top: "rpn_cls_score"
+  convolution_param {
+    num_output: 18   # 2(bg/fg) * 9(anchors)
+    kernel_size: 1 pad: 0 stride: 1
+  }
+}
+layer {
+  name: "rpn_bbox_pred"
+  type: "Convolution"
+  bottom: "rpn/output"
+  top: "rpn_bbox_pred"
+  convolution_param {
+    num_output: 36 # 4 * 9(anchors)
+    kernel_size: 1 pad: 0 stride: 1
+  }
+}
+layer {
+   bottom: "rpn_cls_score"
+   top: "rpn_cls_score_reshape"
+   name: "ReshapeCTo2"
+   type: "Reshape"
+   reshape_param {
+     shape {
+       dim: 2
+       dim: -1
+       dim: 0
+     }
