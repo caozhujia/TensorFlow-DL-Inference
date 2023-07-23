@@ -316,3 +316,113 @@ layer {
        dim: -1
        dim: 0
      }
+     axis: 1
+   }
+}
+
+#========= RoI Proposal ============
+
+layer {
+  name: "rpn_cls_prob"
+  type: "Softmax"
+  bottom: "rpn_cls_score_reshape"
+  top: "rpn_cls_prob"
+}
+layer {
+  name: 'ReshapeCTo18'
+  type: 'Reshape'
+  bottom: 'rpn_cls_prob'
+  top: 'rpn_cls_prob_reshape'
+   reshape_param {
+     shape {
+       dim: 18
+       dim: -1
+       dim: 0
+     }
+     axis: 1
+   }
+}
+layer {
+  name: "RPROIFused"
+  type: "RPROI"
+  bottom: 'rpn_cls_prob_reshape'
+  bottom: 'rpn_bbox_pred'
+  bottom: 'conv5_3'
+  bottom: 'im_info'
+  top: 'rois'
+  top: 'pool5'
+  region_proposal_param {
+    feature_stride: 16
+    prenms_top: 6000
+    nms_max_out: 300
+    anchor_ratio_count: 3
+    anchor_scale_count: 3
+    iou_threshold: 0.7
+    min_box_size: 16
+    anchor_ratio: 0.5
+    anchor_ratio: 1.0
+    anchor_ratio: 2.0
+    anchor_scale: 8.0
+    anchor_scale: 16.0
+    anchor_scale: 32.0
+  }
+  roi_pooling_param {
+    pooled_h: 7
+    pooled_w: 7
+    spatial_scale: 0.0625
+  }
+}
+layer {
+  name: "fc6"
+  type: "InnerProduct"
+  bottom: "pool5"
+  top: "fc6"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "relu6"
+  type: "ReLU"
+  bottom: "fc6"
+  top: "fc6"
+}
+layer {
+  name: "fc7"
+  type: "InnerProduct"
+  bottom: "fc6"
+  top: "fc7"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "relu7"
+  type: "ReLU"
+  bottom: "fc7"
+  top: "fc7"
+}
+layer {
+  name: "cls_score"
+  type: "InnerProduct"
+  bottom: "fc7"
+  top: "cls_score"
+  inner_product_param {
+    num_output: 21
+  }
+}
+layer {
+  name: "bbox_pred"
+  type: "InnerProduct"
+  bottom: "fc7"
+  top: "bbox_pred"
+  inner_product_param {
+    num_output: 84
+  }
+}
+layer {
+  name: "cls_prob"
+  type: "Softmax"
+  bottom: "cls_score"
+  top: "cls_prob"
+}
