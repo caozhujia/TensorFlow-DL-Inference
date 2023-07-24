@@ -11,3 +11,12 @@
 ```shell
 cd TensorRT-Base
 mkdir build
+cd build
+cmake ..
+make
+```
+
+### 2.2 运行 faster rcnn
+
+```shell
+PS E:\TensorRT-Base> .\bin\Release\mnist
