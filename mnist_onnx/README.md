@@ -19,4 +19,6 @@ make
 ### 2.2 运行 faster rcnn
 
 ```shell
-PS E:\TensorRT-Base> .\bin\Release\mnist
+PS E:\TensorRT-Base> .\bin\Release\mnist_onnx.exe
+[2021-04-26 21:25:52][  WARN ] : empty engine file name, skip save!
+[2021-04-26 21:25:52][ DEBUG 
