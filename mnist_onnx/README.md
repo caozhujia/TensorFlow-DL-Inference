@@ -27,4 +27,8 @@ Input filename:   mnist_onnx/model/mnist.onnx
 ONNX IR version:  0.0.3
 Opset version:    8
 Producer name:    CNTK
-Pro
+Producer version: 2.5.1
+Domain:           ai.cntk
+Model version:    1
+Doc string:
+--------------------------------
