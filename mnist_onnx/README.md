@@ -32,4 +32,4 @@ Domain:           ai.cntk
 Model version:    1
 Doc string:
 ----------------------------------------------------------------
-[2021-04-26 21:25:52][  WARN ] : onnx2trt_utils.cpp:220: Your ONNX model has 
+[2021-04-26 21:25:52][  WARN ] : onnx2trt_utils.cpp:220: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to ca
