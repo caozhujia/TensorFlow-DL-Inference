@@ -22,4 +22,9 @@ make
 PS E:\TensorRT-Base> .\bin\Release\mnist_onnx.exe
 [2021-04-26 21:25:52][  WARN ] : empty engine file name, skip save!
 [2021-04-26 21:25:52][ DEBUG ] : build onnx engine from mnist_onnx/model/mnist.onnx ...
----------------------------------------------------------
+----------------------------------------------------------------
+Input filename:   mnist_onnx/model/mnist.onnx
+ONNX IR version:  0.0.3
+Opset version:    8
+Producer name:    CNTK
+Pro
