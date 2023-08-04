@@ -34,4 +34,6 @@ Doc string:
 ----------------------------------------------------------------
 [2021-04-26 21:25:52][  WARN ] : onnx2trt_utils.cpp:220: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
 [2021-04-26 21:25:52][ DEBUG ] : unmark original output...
-[2021-04-26 21:25
+[2021-04-26 21:25:52][ DEBUG ] : mark custom output...
+[2021-04-26 21:25:52][ DEBUG ] : FP16 support: 1
+[2021-04-26 21
