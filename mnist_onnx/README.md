@@ -36,4 +36,6 @@ Doc string:
 [2021-04-26 21:25:52][ DEBUG ] : unmark original output...
 [2021-04-26 21:25:52][ DEBUG ] : mark custom output...
 [2021-04-26 21:25:52][ DEBUG ] : FP16 support: 1
-[2021-04-26 21
+[2021-04-26 21:25:52][ DEBUG ] : INT8 support: 1
+[2021-04-26 21:25:52][ DEBUG ] : Max batchsize: 1
+[20
