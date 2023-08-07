@@ -46,4 +46,6 @@ Doc string:
 [2021-04-26 21:26:00][ DEBUG ] : build Network done
 [2021-04-26 21:26:00][ DEBUG ] : serialize engine to
 [2021-04-26 21:26:00][  WARN ] : empty engine file name, skip save!
-[2021-04-26 21:26:00][ DEBUG ] : create execute context and malloc dev
+[2021-04-26 21:26:00][ DEBUG ] : create execute context and malloc device memory...
+[2021-04-26 21:26:00][ DEBUG ] : init engine...
+[2021-04-26 21:26:00][ DEBUG ] : malloc d
