@@ -48,4 +48,6 @@ Doc string:
 [2021-04-26 21:26:00][  WARN ] : empty engine file name, skip save!
 [2021-04-26 21:26:00][ DEBUG ] : create execute context and malloc device memory...
 [2021-04-26 21:26:00][ DEBUG ] : init engine...
-[2021-04-26 21:26:00][ DEBUG ] : malloc d
+[2021-04-26 21:26:00][ DEBUG ] : malloc device memory
+[2021-04-26 21:26:00][ DEBUG ] : nbBingdings: 2
+[2021-04-26 21:26:00][ DEBUG 
