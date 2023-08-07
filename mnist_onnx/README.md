@@ -39,4 +39,6 @@ Doc string:
 [2021-04-26 21:25:52][ DEBUG ] : INT8 support: 1
 [2021-04-26 21:25:52][ DEBUG ] : Max batchsize: 1
 [2021-04-26 21:25:52][ DEBUG ] : Max workspace size: 16777216
-[2021-04-26 21:25:52][ DEBUG ] : Num
+[2021-04-26 21:25:52][ DEBUG ] : Number of DLA core: 0
+[2021-04-26 21:25:52][ DEBUG ] : Max DLA batchsize: 268435456
+[2021-04-26 21:25:52][ DEBUG ] : Curr
