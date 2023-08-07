@@ -43,4 +43,6 @@ Doc string:
 [2021-04-26 21:25:52][ DEBUG ] : Max DLA batchsize: 268435456
 [2021-04-26 21:25:52][ DEBUG ] : Current use DLA core: 0
 [2021-04-26 21:25:52][ DEBUG ] : build engine ... 
-[2021-04-26 21:26:00][ DEBUG
+[2021-04-26 21:26:00][ DEBUG ] : build Network done
+[2021-04-26 21:26:00][ DEBUG ] : serialize engine to
+[2021-04-26 21:26:00][  WARN ] :
