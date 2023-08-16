@@ -50,4 +50,6 @@ Doc string:
 [2021-04-26 21:26:00][ DEBUG ] : init engine...
 [2021-04-26 21:26:00][ DEBUG ] : malloc device memory
 [2021-04-26 21:26:00][ DEBUG ] : nbBingdings: 2
-[2021-04-26 21:26:00][ DEBUG 
+[2021-04-26 21:26:00][ DEBUG ] : input:
+[2021-04-26 21:26:00][ DEBUG ] : binding bindIndex: 0, name: Input3, size in byte: 3136
+[2021-04-26 21:26:00]
