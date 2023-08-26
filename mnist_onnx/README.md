@@ -55,4 +55,6 @@ Doc string:
 [2021-04-26 21:26:00][ DEBUG ] : binding dims with 4 dimemsion
 [2021-04-26 21:26:00][ DEBUG ] : output:
 [2021-04-26 21:26:00][ DEBUG ] : binding bindIndex: 1, name: Plus214_Output_0, size in byte: 40
-[2021-04-26 21:26:00]
+[2021-04-26 21:26:00][ DEBUG ] : binding dims with 2 dimemsion
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@
