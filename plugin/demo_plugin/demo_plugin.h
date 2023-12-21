@@ -123,3 +123,79 @@ public:
 
     /**
      * 深拷贝
+    */
+    nvinfer1::IPluginV2Ext* clone() const override;
+
+    /**
+     * 设置 namespace
+     * 
+     * 注意：同一个namespace下的plugin如果名字相同会冲突
+    */
+    void setPluginNamespace(const char* pluginNamespace) override;
+
+    /**
+     * 获取 namespace
+    */
+    const char* getPluginNamespace() const override;
+
+private:
+    const std::string m_layer_name;
+    size_t m_cpoy_size;
+    std::string m_namespace;
+    std::string m_plugin_version;
+    std::string m_plugin_name;
+    
+}; //DemoPlugin
+
+class DemoPluginCreator : public nvinfer1::IPluginCreator
+{
+public:
+    /**
+     * 默认构造函数
+    */
+    DemoPluginCreator();
+
+    /**
+     * 获取 plugin 名称
+    */
+    const char* getPluginName() const override;
+
+    /**
+     * 获取 plugin 版本
+    */
+    const char* getPluginVersion() const override;
+
+    /**
+     * 获取 file 名称
+    */
+    const nvinfer1::PluginFieldCollection* getFieldNames() override;
+
+    /**
+     * 创建 plugin
+    */
+    nvinfer1::IPluginV2* createPlugin(const char* name, const nvinfer1::PluginFieldCollection* fc) override;
+
+    /**
+     * 序列化 plugin
+    */
+    nvinfer1::IPluginV2* deserializePlugin(const char* name, const void* serialData, size_t serialLength) override;
+
+    /**
+     * 设置 namespace
+    */
+    void setPluginNamespace(const char* pluginNamespace) override;
+
+    /**
+     * 获取 namespace
+    */
+    const char* getPluginNamespace() const override;
+private:
+    nvinfer1::PluginFieldCollection m_fc;
+    std::string m_namespace;
+    std::string m_plugin_version;
+    std::string m_plugin_name;
+};  // DemoPluginCreator
+
+} // namespace plugin
+} // namespace nvinfer1
+#endif // TRT_DEMO_PLUGIN_H
